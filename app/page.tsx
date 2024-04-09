@@ -27,6 +27,8 @@ export default function Home() {
             <p>
               This article is about optimizing LCP and TTI.
               <br />
+              <br />
+              ↓ Scroll down ↓
             </p>
           </Section>
         </Content>
