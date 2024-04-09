@@ -25,9 +25,9 @@ export default function Home() {
             <h1 className="text-3xl font-bold mb-4">Web Loading Strategies</h1>
 
             <p>
-              This article is about optimizing LCP and TTI.
+              Comparision of different web loading strategies like Client Side, Server Side and Streaming.
               <br />
-              <br />↓ Scroll down ↓
+              <br />↓ Scroll down to start↓
             </p>
           </Section>
         </Content>
@@ -56,7 +56,7 @@ export default function Home() {
 
           <Section>
             <h2 className="text-2xl my-4">
-              Server Side Rendering with Streaming
+              Server Side Streaming
             </h2>
 
             <p>
