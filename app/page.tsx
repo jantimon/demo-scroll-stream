@@ -1,5 +1,5 @@
 import { Arrow } from "./svg/line";
-import { keyframes, styled } from "next-yak";
+import { styled } from "next-yak";
 
 export default function Home() {
   return (
@@ -27,8 +27,7 @@ export default function Home() {
             <p>
               This article is about optimizing LCP and TTI.
               <br />
-              <br />
-              ↓ Scroll down ↓
+              <br />↓ Scroll down ↓
             </p>
           </Section>
         </Content>
@@ -61,7 +60,9 @@ export default function Home() {
             </h2>
 
             <p>
-              With streaming the HTML generation can start before the data is fully loaded. This can reduce the time to first byte and improve the LCP.
+              With streaming the HTML generation can start before the data is
+              fully loaded. This can reduce the time to first byte and improve
+              the LCP.
             </p>
           </Section>
         </Content>
