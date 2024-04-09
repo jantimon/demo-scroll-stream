@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.js
+import { withYak } from "next-yak/withYak";
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // your next.js config
+};
+
+export default withYak(nextConfig);
