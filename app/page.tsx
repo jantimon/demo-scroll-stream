@@ -3,7 +3,7 @@ import { styled } from "next-yak";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-2">
+    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
       <div
         className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
         style={{ containerType: "inline-size" }}
