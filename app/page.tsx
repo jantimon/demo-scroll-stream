@@ -60,7 +60,9 @@ export default function Home() {
               Server Side Rendering with Streaming
             </h2>
 
-            <p></p>
+            <p>
+              With streaming the HTML generation can start before the data is fully loaded. This can reduce the time to first byte and improve the LCP.
+            </p>
           </Section>
         </Content>
       </div>
