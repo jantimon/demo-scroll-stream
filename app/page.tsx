@@ -4,7 +4,7 @@ import { styled } from "next-yak";
 export default function Home() {
   return (
     <>
-      <Main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
+      <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
         <div
           className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
           style={{ containerType: "inline-size" }}
@@ -70,7 +70,7 @@ export default function Home() {
           </Content>
           <p className="text-right text-xs">The end.</p>
         </div>
-      </Main>
+      </main>
       <Warning aria-hidden="true">
         Please use a browser that supports{" "}
         <a href="https://caniuse.com/mdn-css_properties_animation-timeline">
@@ -80,16 +80,6 @@ export default function Home() {
     </>
   );
 }
-
-const Main = styled.main`
-  visibility: hidden;
-  @supports (animation-timeline: scroll()) {
-    visibility: visible;
-    &:before {
-      display: none;
-    }
-  }
-`;
 
 const Warning = styled.div`
   @supports (animation-timeline: scroll()) {
@@ -118,6 +108,11 @@ const SvgWrapper = styled.div`
   position: sticky;
   top: 0;
   padding-bottom: 40px;
+
+  visibility: hidden;
+  @supports (animation-timeline: scroll()) {
+    visibility: visible;
+  }
 `;
 
 const Content = styled.div`
