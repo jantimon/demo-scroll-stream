@@ -15,7 +15,7 @@ export default function Home() {
             height="300.505"
             strokeLinecap="round"
             strokeLinejoin="round"
-            viewBox="19645.86 53497.44 1582.65 601.01"
+            viewBox="19645.86 53497.44 1582.65 622.01"
           >
             <Arrow order={[0, 1, 5, 2, 6, 7, 8, 4, 3]} />
           </StickySvg>

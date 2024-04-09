@@ -226,48 +226,47 @@ export const Arrow = ({
               d="M5.25 402.64L0 411.73l-5.25-9.09"
             ></AnimatedLine>
 
-        <AnimateLCPTextPosition>
-        <TextWithFadeIn
-          $start={19}
-          $end={24}
-          fill="#fff"
-          stroke="#fff"
-          strokeWidth="0"
-          alignmentBaseline="mathematical"
-          dominantBaseline="mathematical"
-          fontFamily="sans-serif"
-          fontSize="24"
-        >
-          <tspan x="-64.525" y="12.5" alignmentBaseline="mathematical">
-            LCP
-          </tspan>
-        </TextWithFadeIn>
-        </AnimateLCPTextPosition>
-
+            <AnimateLCPTextPosition>
+              <TextWithFadeIn
+                $start={19}
+                $end={24}
+                fill="#fff"
+                stroke="#fff"
+                strokeWidth="0"
+                alignmentBaseline="mathematical"
+                dominantBaseline="mathematical"
+                fontFamily="sans-serif"
+                fontSize="24"
+              >
+                <tspan x="-64.525" y="12.5" alignmentBaseline="mathematical">
+                  LCP
+                </tspan>
+              </TextWithFadeIn>
+            </AnimateLCPTextPosition>
           </g>
         </AnimatedLcpArrowSSR>
       </AnimateShellAndLcpArrowStreaming>
       <AnimatedClientActionStreaming>
-        <g transform="translate(19677.86 54065.07)">
-          <defs>
-            <mask id="shape_ps4IGLnLtebdfzz2XypE__clip">
-              <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
-              <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
-            </mask>
-          </defs>
-          <AnimatedClientActionSSR mask="url(#shape_ps4IGLnLtebdfzz2XypE__clip)">
-            <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
-            <AnimatedLine
-              $delay={delays[5]}
-              $totalLength={lengths[5][0]}
-              fill="none"
-              stroke="#ffc034"
-              strokeDashoffset="none"
-              strokeWidth="3.5"
-              d="M0 0h285.04"
-            ></AnimatedLine>
-          </AnimatedClientActionSSR>
-          <AnimatedClientActionSSR>
+        <AnimatedClientActionSSR>
+          <g transform="translate(19677.86 54065.07)">
+            <defs>
+              <mask id="shape_ps4IGLnLtebdfzz2XypE__clip">
+                <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
+                <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
+              </mask>
+            </defs>
+            <g mask="url(#shape_ps4IGLnLtebdfzz2XypE__clip)">
+              <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
+              <AnimatedLine
+                $delay={delays[5]}
+                $totalLength={lengths[5][0]}
+                fill="none"
+                stroke="#ffc034"
+                strokeDashoffset="none"
+                strokeWidth="3.5"
+                d="M0 0h285.04"
+              ></AnimatedLine>
+            </g>
             <AnimatedLine
               $delay={delays[5] + lengths[5][0]}
               $totalLength={lengths[5][1]}
@@ -276,30 +275,45 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M275.94-5.25l9.1 5.25-9.1 5.24"
             ></AnimatedLine>
-          </AnimatedClientActionSSR>
-        </g>
+            <TextWithFadeIn
+              $start={10}
+              $end={15}
+              fill="#ffc034"
+              stroke="#ffc034"
+              strokeWidth="0"
+              alignmentBaseline="mathematical"
+              dominantBaseline="mathematical"
+              fontFamily="sans-serif"
+              fontSize="20"
+            >
+              <tspan x="2.525" y="-16.5" alignmentBaseline="mathematical">
+                HTML download
+              </tspan>
+            </TextWithFadeIn>
+          </g>
+        </AnimatedClientActionSSR>
       </AnimatedClientActionStreaming>
       <AnimatedClientActionStreaming>
-        <g transform="translate(20002.48 54065.07)">
-          <defs>
-            <mask id="shape_fACsxL4N5JmU-rfygu3aL_clip">
-              <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
-              <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
-            </mask>
-          </defs>
-          <AnimatedClientActionSSR mask="url(#shape_fACsxL4N5JmU-rfygu3aL_clip)">
-            <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
-            <AnimatedLine
-              $delay={delays[6]}
-              $totalLength={lengths[6][0]}
-              fill="none"
-              stroke="#ff8787"
-              strokeDashoffset="none"
-              strokeWidth="3.5"
-              d="M0 0h285.04"
-            ></AnimatedLine>
-          </AnimatedClientActionSSR>
-          <AnimatedClientActionSSR>
+        <AnimatedClientActionSSR>
+          <g transform="translate(20002.48 54065.07)">
+            <defs>
+              <mask id="shape_fACsxL4N5JmU-rfygu3aL_clip">
+                <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
+                <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
+              </mask>
+            </defs>
+            <g mask="url(#shape_fACsxL4N5JmU-rfygu3aL_clip)">
+              <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
+              <AnimatedLine
+                $delay={delays[6]}
+                $totalLength={lengths[6][0]}
+                fill="none"
+                stroke="#ff8787"
+                strokeDashoffset="none"
+                strokeWidth="3.5"
+                d="M0 0h285.04"
+              ></AnimatedLine>
+            </g>
             <AnimatedLine
               $delay={delays[6] + lengths[6][0]}
               $totalLength={lengths[6][1]}
@@ -308,30 +322,45 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M275.94-5.25l9.1 5.25-9.1 5.24"
             ></AnimatedLine>
-          </AnimatedClientActionSSR>
-        </g>
+            <TextWithFadeIn
+              $start={15}
+              $end={20}
+              fill="#ff8787"
+              stroke="#ff8787"
+              strokeWidth="0"
+              alignmentBaseline="mathematical"
+              dominantBaseline="mathematical"
+              fontFamily="sans-serif"
+              fontSize="20"
+            >
+              <tspan x="2.525" y="-16.5" alignmentBaseline="mathematical">
+                JS download
+              </tspan>
+            </TextWithFadeIn>
+          </g>
+        </AnimatedClientActionSSR>
       </AnimatedClientActionStreaming>
       <AnimatedClientActionStreaming>
-        <g transform="translate(20322.4 54065.07)">
-          <defs>
-            <mask id="shape_aPSpMF39WoCB35bWtYMSX_clip">
-              <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
-              <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
-            </mask>
-          </defs>
-          <AnimatedClientActionSSR mask="url(#shape_aPSpMF39WoCB35bWtYMSX_clip)">
-            <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
-            <AnimatedLine
-              $delay={delays[7]}
-              $totalLength={lengths[7][0]}
-              fill="none"
-              stroke="#ff8787"
-              strokeDashoffset="none"
-              strokeWidth="3.5"
-              d="M0 0h285.04"
-            ></AnimatedLine>
-          </AnimatedClientActionSSR>
-          <AnimatedClientActionSSR>
+        <AnimatedClientActionSSR>
+          <g transform="translate(20322.4 54065.07)">
+            <defs>
+              <mask id="shape_aPSpMF39WoCB35bWtYMSX_clip">
+                <path fill="#fff" d="M-100 -100H385.04V100H-100z"></path>
+                <path fill="none" d="M275.94-5.25l9.1 5.25-9.1 5.24"></path>
+              </mask>
+            </defs>
+            <g mask="url(#shape_aPSpMF39WoCB35bWtYMSX_clip)">
+              <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
+              <AnimatedLine
+                $delay={delays[7]}
+                $totalLength={lengths[7][0]}
+                fill="none"
+                stroke="#ff8787"
+                strokeDashoffset="none"
+                strokeWidth="3.5"
+                d="M0 0h285.04"
+              ></AnimatedLine>
+            </g>
             <AnimatedLine
               $delay={delays[7] + lengths[7][0]}
               $totalLength={lengths[7][1]}
@@ -340,8 +369,23 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M275.94-5.25l9.1 5.25-9.1 5.24"
             ></AnimatedLine>
-          </AnimatedClientActionSSR>
-        </g>
+            <TextWithFadeIn
+              $start={17}
+              $end={22}
+              fill="#ff8787"
+              stroke="#ff8787"
+              strokeWidth="0"
+              alignmentBaseline="mathematical"
+              dominantBaseline="mathematical"
+              fontFamily="sans-serif"
+              fontSize="20"
+            >
+              <tspan x="2.525" y="-16.5" alignmentBaseline="mathematical">
+                JS hydration
+              </tspan>
+            </TextWithFadeIn>
+          </g>
+        </AnimatedClientActionSSR>
       </AnimatedClientActionStreaming>
       <AnimatedDataTransferStreaming>
         <AnimatedDataTransferSSR>
@@ -378,6 +422,21 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M511.7-5.225L520.81 0l-9.08 5.27"
             ></AnimatedLine>
+            <TextWithFadeIn
+              $start={19}
+              $end={24}
+              fill="#40c057"
+              stroke="#40c057"
+              strokeWidth="0"
+              alignmentBaseline="mathematical"
+              dominantBaseline="mathematical"
+              fontFamily="sans-serif"
+              fontSize="20"
+            >
+              <tspan x="14.525" y="16.5" alignmentBaseline="mathematical">
+                Data Loading
+              </tspan>
+            </TextWithFadeIn>
           </g>
         </AnimatedDataTransferSSR>
       </AnimatedDataTransferStreaming>
