@@ -47,10 +47,10 @@ export default function Home() {
             <h2 className="text-2xl my-4">Server Side Rendering</h2>
 
             <p>
-              With frameworks like Next.js, SSR became easier to implement. The
-              server loads the data and renders the page afterwards. Once
-              rendered on the client, the client side javascript is executed to
-              add interactivity.
+              With frameworks like Next.js, SSR became easier to implement. It
+              allows moving the data download to the server and renders the page
+              without client javascript. Once the javascript is downloaded, the
+              client side javascript is executed to add interactivity.
             </p>
           </Section>
 
@@ -60,9 +60,9 @@ export default function Home() {
             </h2>
 
             <p>
-              With streaming the HTML generation can start before the data is
-              fully loaded. This can reduce the time to first byte and improve
-              the LCP.
+              With streaming the HTML generation and download can start even
+              before the data is fully loaded. This will further reduce the time
+              to first byte and improve the LCP and FID.
             </p>
           </Section>
         </Content>
