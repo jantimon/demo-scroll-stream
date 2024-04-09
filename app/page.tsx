@@ -3,73 +3,111 @@ import { styled } from "next-yak";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
-      <div
-        className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
-        style={{ containerType: "inline-size" }}
-      >
-        <SvgWrapper>
-          <StickySvg
-            xmlns="http://www.w3.org/2000/svg"
-            width="766.325"
-            height="300.505"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            viewBox="19645.86 53497.44 1582.65 622.01"
-          >
-            <Arrow order={[0, 1, 5, 2, 6, 7, 8, 4, 3]} />
-          </StickySvg>
-        </SvgWrapper>
-        <Content>
-          <Section>
-            <h1 className="text-3xl font-bold mb-4">Web Loading Strategies</h1>
+    <>
+      <Main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
+        <div
+          className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
+          style={{ containerType: "inline-size" }}
+        >
+          <SvgWrapper>
+            <StickySvg
+              xmlns="http://www.w3.org/2000/svg"
+              width="766.325"
+              height="300.505"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="19645.86 53497.44 1582.65 622.01"
+            >
+              <Arrow order={[0, 1, 5, 2, 6, 7, 8, 4, 3]} />
+            </StickySvg>
+          </SvgWrapper>
+          <Content>
+            <Section>
+              <h1 className="text-3xl font-bold mb-4">
+                Website Loading Strategies
+              </h1>
+              <p>
+                Comparision of different web loading strategies for a website
+                with dynamic content.
+                <br />
+                <br />↓ Scroll down to start ↓
+              </p>
+            </Section>
+          </Content>
+          <Content>
+            <Section>
+              <h2 className="text-2xl my-4">Client Side Rendering</h2>
 
-            <p>
-              Comparision of different web loading strategies like Client Side, Server Side and Streaming.
-              <br />
-              <br />↓ Scroll down to start↓
-            </p>
-          </Section>
-        </Content>
-        <Content>
-          <Section>
-            <h2 className="text-2xl my-4">Client Side Rendering</h2>
+              <p>
+                Client side rendering is a common way to build web applications.
+                It is easy to develop and deploy. Once the client side
+                javascript has been executed on the client it loads the data
+                from the server and renders the page.
+              </p>
+            </Section>
 
-            <p>
-              Client side rendering is a common way to build web applications.
-              It is easy to develop and deploy. Once the client side javascript
-              has been executed on the client it loads the data from the server
-              and renders the page.
-            </p>
-          </Section>
+            <Section>
+              <h2 className="text-2xl my-4">Server Side Rendering</h2>
 
-          <Section>
-            <h2 className="text-2xl my-4">Server Side Rendering</h2>
+              <p>
+                With frameworks like Next.js, SSR became easier to implement. It
+                allows moving the data download to the server and renders the
+                page without client javascript. Once the javascript is
+                downloaded, the client side javascript is executed to add
+                interactivity.
+              </p>
+            </Section>
 
-            <p>
-              With frameworks like Next.js, SSR became easier to implement. It
-              allows moving the data download to the server and renders the page
-              without client javascript. Once the javascript is downloaded, the
-              client side javascript is executed to add interactivity.
-            </p>
-          </Section>
+            <Section>
+              <h2 className="text-2xl my-4">Server Side Streaming</h2>
 
-          <Section>
-            <h2 className="text-2xl my-4">
-              Server Side Streaming
-            </h2>
-
-            <p>
-              With streaming the HTML generation and download can start even
-              before the data is fully loaded. This will further reduce the time
-              to first byte and improve the LCP and FID.
-            </p>
-          </Section>
-        </Content>
-      </div>
-    </main>
+              <p>
+                With streaming the HTML generation and download can start even
+                before the data is fully loaded. This will further reduce the
+                time to first byte and improve the LCP and FID.
+              </p>
+            </Section>
+          </Content>
+          <p className="text-right text-xs">The end.</p>
+        </div>
+      </Main>
+      <Warning aria-hidden="true">
+        Please use a browser that supports{" "}
+        <a href="https://caniuse.com/mdn-css_properties_animation-timeline">
+          css scroll based animations
+        </a>
+      </Warning>
+    </>
   );
 }
+
+const Main = styled.main`
+  visibility: hidden;
+  @supports (animation-timeline: scroll()) {
+    visibility: visible;
+    &:before {
+      display: none;
+    }
+  }
+`;
+
+const Warning = styled.div`
+  @supports (animation-timeline: scroll()) {
+    display: none;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: #f11c40;
+  text-align: center;
+  font-size: 0.8rem;
+  a {
+    color: #f3e7e9;
+    text-decoration: underline;
+  }
+`;
 
 const StickySvg = styled.svg`
   width: 100%;
