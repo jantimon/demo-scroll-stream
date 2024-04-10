@@ -1,5 +1,5 @@
 import { Arrow } from "./svg/line";
-import { styled } from "next-yak";
+import { css, styled } from "next-yak";
 
 export default function Home() {
   return (
@@ -26,24 +26,42 @@ export default function Home() {
               <h1 className="text-3xl font-bold mb-4">
                 Website Loading Strategies
               </h1>
+              <p>On most modern websites users have to wait for two things:</p>
+              <ol className="list-decimal list-inside my-4">
+                <li>
+                  <span style={{ color: "#40c057" }}>dynamic content</span> to
+                  present the most important information of the website
+                  (measured as{" "}
+                  <a
+                    title="Largest Contentful Paint"
+                    href="https://web.dev/articles/lcp"
+                    target="_blank"
+                    style={{ color: "#b484d3" }}
+                  >
+                    LCP
+                  </a>
+                  )
+                </li>
+                <li>
+                  <span style={{ color: "#72C7F9" }}>javascript</span> to become
+                  interactive (measured as{" "}
+                  <a
+                    title="Time to Interactive"
+                    href="https://web.dev/articles/tti"
+                    target="_blank"
+                    style={{ color: "#b484d3" }}
+                  >
+                    TTI
+                  </a>
+                  )
+                </li>
+              </ol>
               <p>
-                On most modern websites users have to wait for two things:
-                <ol className="list-decimal list-inside my-4">
-                  <li>
-                    <span style={{ color: "#40c057" }}>dynamic content</span>{" "}
-                    before it can present the most important part of the website
-                    (measured as <span style={{ color: "#b484d3" }}>LCP</span>)
-                  </li>
-                  <li>
-                    <span style={{ color: "#72C7F9" }}>javascript</span> to
-                    become interactive (measured as{" "}
-                    <span style={{ color: "#b484d3" }}>TTI</span>)
-                  </li>
-                </ol>
-                Let's explore different strategies which try to improve these metrics.
-                <br />
-                <br />↓ Scroll down to start ↓
+                Let's explore different strategies which try to improve these
+                metrics.
               </p>
+              <br />
+              <br />↓ Scroll down to start ↓
             </Section>
           </Content>
           <Content>
@@ -160,5 +178,5 @@ const StickySvgWrapper = styled.div`
 const Content = styled.div``;
 
 const Section = styled.section`
-  margin-bottom: calc(100vh - 100cqw * (300.505 / 766.325) + 40px);
+  padding-bottom: calc(100vh - 100cqw * (300.505 / 766.325) + 40px);
 `;
