@@ -152,6 +152,8 @@ export const Arrow = ({
         </AnimateShellArrowSSR>
       </AnimateShellAndLcpArrowStreaming>
       <AnimateShellAndLcpArrowStreaming>
+
+      <Move $start={85} $end={90} $x={-110}>
         <g transform="translate(21152.78 53529.79)">
           <defs>
             <mask id="shape_4emqaMNauOmkRol8DKj9y_clip">
@@ -195,6 +197,7 @@ export const Arrow = ({
             </tspan>
           </TextWithFadeIn>
         </g>
+        </Move>
       </AnimateShellAndLcpArrowStreaming>
       <AnimateShellAndLcpArrowStreaming>
         <AnimatedLcpArrowSSR>
@@ -304,6 +307,7 @@ export const Arrow = ({
             </defs>
             <g mask="url(#shape_fACsxL4N5JmU-rfygu3aL_clip)">
               <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
+              <ShrinkExecutionTime>
               <AnimatedLine
                 $delay={delays[6]}
                 $totalLength={lengths[6][0]}
@@ -313,7 +317,9 @@ export const Arrow = ({
                 strokeWidth="3.5"
                 d="M0 0h285.04"
               ></AnimatedLine>
+              </ShrinkExecutionTime>
             </g>
+            <Move $start={85} $end={90} $x={-55}>
             <AnimatedLine
               $delay={delays[6] + lengths[6][0]}
               $totalLength={lengths[6][1]}
@@ -322,6 +328,7 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M275.94-5.25l9.1 5.25-9.1 5.24"
             ></AnimatedLine>
+            </Move>
             <TextWithFadeIn
               $start={15}
               $end={20}
@@ -340,6 +347,7 @@ export const Arrow = ({
           </g>
         </AnimatedClientActionSSR>
       </AnimatedClientActionStreaming>
+      <Move $start={85} $end={90} $x={-55}>
       <AnimatedClientActionStreaming>
         <AnimatedClientActionSSR>
           <g transform="translate(20322.4 54065.07)">
@@ -351,6 +359,7 @@ export const Arrow = ({
             </defs>
             <g mask="url(#shape_aPSpMF39WoCB35bWtYMSX_clip)">
               <path fill="transparent" d="M-100 -100H385.04V100H-100z"></path>
+              <ShrinkExecutionTime>
               <AnimatedLine
                 $delay={delays[7]}
                 $totalLength={lengths[7][0]}
@@ -360,7 +369,10 @@ export const Arrow = ({
                 strokeWidth="3.5"
                 d="M0 0h285.04"
               ></AnimatedLine>
+              </ShrinkExecutionTime>
             </g>
+
+            <Move $start={85} $end={90} $x={-55}>
             <AnimatedLine
               $delay={delays[7] + lengths[7][0]}
               $totalLength={lengths[7][1]}
@@ -369,6 +381,7 @@ export const Arrow = ({
               strokeWidth="3.5"
               d="M275.94-5.25l9.1 5.25-9.1 5.24"
             ></AnimatedLine>
+            </Move>
             <TextWithFadeIn
               $start={17}
               $end={22}
@@ -387,6 +400,7 @@ export const Arrow = ({
           </g>
         </AnimatedClientActionSSR>
       </AnimatedClientActionStreaming>
+      </Move>
       <AnimatedDataTransferStreaming>
         <AnimatedDataTransferSSR>
           <g transform="translate(20622.88 54065.07)">
@@ -488,7 +502,7 @@ const AnimatedDataTransferSSR = styled.g`
   --y-step: 25px;
   animation: ${moveYStepTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 50% cover 60%;
+  animation-range: cover 40% cover 50%;
 `;
 
 const AnimatedClientActionSSR = styled.g`
@@ -496,7 +510,7 @@ const AnimatedClientActionSSR = styled.g`
   --y: 1px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 58% cover 60%;
+  animation-range: cover 48% cover 50%;
 `;
 
 const AnimatedLcpArrowSSR = styled.g`
@@ -504,7 +518,7 @@ const AnimatedLcpArrowSSR = styled.g`
   --y: 0px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 58% cover 60%;
+  animation-range: cover 48% cover 50%;
 `;
 
 const AnimateShellArrowSSR = styled.g`
@@ -512,7 +526,15 @@ const AnimateShellArrowSSR = styled.g`
   --y: 1px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 58% cover 60%;
+  animation-range: cover 48% cover 50%;
+`;
+
+const AnimateLCPTextPosition = styled.g`
+  --x: 76px;
+  --y: 0px;
+  animation: ${moveTransform} forwards;
+  animation-timeline: scroll();
+  animation-range: cover 48% cover 50%;
 `;
 
 const AnimatedClientActionStreaming = styled.g`
@@ -520,7 +542,7 @@ const AnimatedClientActionStreaming = styled.g`
   --y: 0px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 70% cover 80%;
+  animation-range: cover 60% cover 70%;
 `;
 
 const AnimateShellAndLcpArrowStreaming = styled.g`
@@ -528,7 +550,7 @@ const AnimateShellAndLcpArrowStreaming = styled.g`
   --y: 0px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 70% cover 80%;
+  animation-range: cover 60% cover 70%;
 `;
 
 const AnimatedDataTransferStreaming = styled.g`
@@ -536,7 +558,7 @@ const AnimatedDataTransferStreaming = styled.g`
   --y: 25px;
   animation: ${moveTransform} forwards;
   animation-timeline: scroll();
-  animation-range: cover 70% cover 80%;
+  animation-range: cover 60% cover 70%;
 `;
 
 const fadeOutAnimation = keyframes`
@@ -551,7 +573,29 @@ const fadeOutAnimation = keyframes`
 const FadeOut = styled.g`
   animation: ${fadeOutAnimation} forwards;
   animation-timeline: scroll();
-  animation-range: cover 90% cover 100%;
+  animation-range: cover 95% cover 100%;
+`;
+
+const shrinkAndMoveTransform = keyframes`
+  to {
+    transform: scaleX(var(--scaleX));
+  }
+`;
+
+const ShrinkExecutionTime = styled.g`
+  transform-origin: 0 0;
+  --scaleX: 0.8;
+  animation: ${shrinkAndMoveTransform} forwards;
+  animation-timeline: scroll();
+  animation-range: cover 85% cover 90%;
+`
+
+const Move = styled.g<{$x?: number, $y?: number, $start: number, $end: number}>`
+  --x: ${({ $x }) => $x || 0}px;
+  --y: ${({ $y }) => $y || 0}px;
+  animation: ${moveTransform} forwards;
+  animation-timeline: scroll();
+  animation-range: cover ${({$start}) => $start}% cover ${({$end}) => $end}%;
 `;
 
 const fadeInAnimation = keyframes`
@@ -565,12 +609,4 @@ const TextWithFadeIn = styled.text<{ $start: number; $end: number }>`
   animation: ${fadeInAnimation} 1s forwards;
   animation-timeline: scroll();
   animation-range: cover ${({ $start }) => $start}% cover ${({ $end }) => $end}%;
-`;
-
-const AnimateLCPTextPosition = styled.g`
-  --x: 76px;
-  --y: 0px;
-  animation: ${moveTransform} forwards;
-  animation-timeline: scroll();
-  animation-range: cover 58% cover 60%;
 `;

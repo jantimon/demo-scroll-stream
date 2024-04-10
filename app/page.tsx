@@ -4,10 +4,11 @@ import { Arrow } from "./svg/line";
 export default function Home() {
   return (
     <>
-      <main id="top" className="flex min-h-screen flex-col items-center justify-between sm:px-24 px-4">
-        <Container
-          className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
-        >
+      <main
+        id="top"
+        className="flex min-h-screen flex-col items-center justify-between sm:px-24 px-4"
+      >
+        <Container className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col">
           <StickySvgWrapper className="bg">
             <ResponsiveSvg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +60,18 @@ export default function Home() {
                 metrics:
               </p>
               <ul className="list-disc list-inside my-4">
-                <li><a href="#csr">Client Side Rendering</a></li>
-                <li><a href="#ssr">Server Side Rendering</a></li>
-                <li><a href="#sss">Server Side Streaming</a></li>
+                <li>
+                  <a href="#csr">Client Side Rendering</a>
+                </li>
+                <li>
+                  <a href="#ssr">Server Side Rendering</a>
+                </li>
+                <li>
+                  <a href="#sss">Server Side Streaming</a>
+                </li>
+                <li>
+                  <a href="#rsc">React Server Components</a>
+                </li>
               </ul>
               <br />
               <br />↓ Scroll down to start ↓
@@ -69,7 +79,9 @@ export default function Home() {
           </Content>
           <Content>
             <Section>
-              <h2 id="csr" className="text-2xl my-4">Client Side Rendering</h2>
+              <h2 id="csr" className="text-2xl my-4">
+                Client Side Rendering
+              </h2>
 
               <p>
                 Client side rendering is a common way to build web applications.
@@ -92,7 +104,9 @@ export default function Home() {
             </Section>
 
             <Section>
-              <h2 id="ssr" className="text-2xl my-4">Server Side Rendering</h2>
+              <h2 id="ssr" className="text-2xl my-4">
+                Server Side Rendering
+              </h2>
 
               <p>
                 With frameworks like Next.js, SSR became easier to implement. It
@@ -113,7 +127,9 @@ export default function Home() {
             </Section>
 
             <Section>
-              <h2 id="sss" className="text-2xl my-4">Server Side Streaming</h2>
+              <h2 id="sss" className="text-2xl my-4">
+                Server Side Streaming
+              </h2>
 
               <p>
                 With streaming the HTML generation and{" "}
@@ -128,8 +144,28 @@ export default function Home() {
                 <span style={{ color: "#b484d3" }}>TTI</span>.
               </p>
             </Section>
+
+            <Section>
+              <h2 id="rsc" className="text-2xl my-4">
+                React Server Components
+              </h2>
+
+              <p>
+                Server Side Streaming can be combined with React Server Components.
+                React Server Components reduce the amount of components which
+                have to be hydrated on the client. With less <span style={{ color: "#72C7F9" }}>
+                  javascript to download and to execute (hydration)</span> the
+                page becomes interactive faster (<span style={{ color: "#b484d3" }}>TTI</span>).
+              </p>
+            </Section>
           </Content>
-          <a href="#top" style={{color: "inherit"}} className="text-right text-xs">↑ back to top ↑</a>
+          <a
+            href="#top"
+            style={{ color: "inherit" }}
+            className="text-right text-xs"
+          >
+            ↑ back to top ↑
+          </a>
         </Container>
       </main>
       <Warning aria-hidden="true">
@@ -178,13 +214,16 @@ const StickySvgWrapper = styled.div`
   mask-image: linear-gradient(to top, transparent, #000000 40px);
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;
 
 const Container = styled.div`
   container-type: inline-size;
   [id]::before {
     --anchor-offset: calc(100cqw * (300.505 / 766.325) + 40px);
-    content: '';
+    content: "";
     display: block;
     height: var(--anchor-offset);
     margin-top: calc(var(--anchor-offset) * -1);
