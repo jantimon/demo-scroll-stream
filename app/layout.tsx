@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Javascript loading strategies",
+  title: "Website loading strategies",
   description: "Illustrating different loading strategies in web development",
 };
 
