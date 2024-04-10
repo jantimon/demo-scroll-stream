@@ -30,8 +30,7 @@ export default function Home() {
               <ol className="list-decimal list-inside my-4">
                 <li>
                   <span style={{ color: "#40c057" }}>dynamic content</span> to
-                  see the most important information of the website
-                  (measured as{" "}
+                  see the most important information of the website (measured as{" "}
                   <a
                     title="Largest Contentful Paint"
                     href="https://web.dev/articles/lcp"
@@ -43,7 +42,8 @@ export default function Home() {
                   )
                 </li>
                 <li>
-                  <span style={{ color: "#72C7F9" }}>javascript</span> interact with the dynamic parts of the website (measured as{" "}
+                  <span style={{ color: "#72C7F9" }}>javascript</span> to
+                  interact with the dynamic parts of the website (measured as{" "}
                   <a
                     title="Time to Interactive"
                     href="https://web.dev/articles/tti"
