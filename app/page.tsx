@@ -4,10 +4,9 @@ import { Arrow } from "./svg/line";
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between sm:px-24 px-4">
-        <div
+      <main id="top" className="flex min-h-screen flex-col items-center justify-between sm:px-24 px-4">
+        <Container
           className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
-          style={{ containerType: "inline-size" }}
         >
           <StickySvgWrapper className="bg">
             <ResponsiveSvg
@@ -23,7 +22,7 @@ export default function Home() {
           </StickySvgWrapper>
           <Content>
             <Section>
-              <h1 className="text-3xl font-bold mb-4">
+              <h1 id="intro" className="text-3xl font-bold mb-4">
                 Website Loading Strategies
               </h1>
               <p>On most modern websites users have to wait for two things:</p>
@@ -57,15 +56,20 @@ export default function Home() {
               </ol>
               <p>
                 Let's explore different strategies which try to improve these
-                metrics.
+                metrics:
               </p>
+              <ul className="list-disc list-inside my-4">
+                <li><a href="#csr">Client Side Rendering</a></li>
+                <li><a href="#ssr">Server Side Rendering</a></li>
+                <li><a href="#sss">Server Side Streaming</a></li>
+              </ul>
               <br />
               <br />↓ Scroll down to start ↓
             </Section>
           </Content>
           <Content>
             <Section>
-              <h2 className="text-2xl my-4">Client Side Rendering</h2>
+              <h2 id="csr" className="text-2xl my-4">Client Side Rendering</h2>
 
               <p>
                 Client side rendering is a common way to build web applications.
@@ -88,7 +92,7 @@ export default function Home() {
             </Section>
 
             <Section>
-              <h2 className="text-2xl my-4">Server Side Rendering</h2>
+              <h2 id="ssr" className="text-2xl my-4">Server Side Rendering</h2>
 
               <p>
                 With frameworks like Next.js, SSR became easier to implement. It
@@ -109,7 +113,7 @@ export default function Home() {
             </Section>
 
             <Section>
-              <h2 className="text-2xl my-4">Server Side Streaming</h2>
+              <h2 id="sss" className="text-2xl my-4">Server Side Streaming</h2>
 
               <p>
                 With streaming the HTML generation and{" "}
@@ -125,8 +129,8 @@ export default function Home() {
               </p>
             </Section>
           </Content>
-          <p className="text-right text-xs">The end.</p>
-        </div>
+          <a href="#top" style={{color: "inherit"}} className="text-right text-xs">↑ back to top ↑</a>
+        </Container>
       </main>
       <Warning aria-hidden="true">
         Please use a browser that supports{" "}
@@ -175,6 +179,19 @@ const StickySvgWrapper = styled.div`
 `;
 
 const Content = styled.div``;
+
+const Container = styled.div`
+  container-type: inline-size;
+  [id]::before {
+    --anchor-offset: calc(100cqw * (300.505 / 766.325) + 40px);
+    content: '';
+    display: block;
+    height: var(--anchor-offset);
+    margin-top: calc(var(--anchor-offset) * -1);
+    visibility: hidden;
+    pointer-events: none;
+  }
+`;
 
 const Section = styled.section`
   padding-bottom: calc(100vh - 100cqw * (300.505 / 766.325) + 40px);
