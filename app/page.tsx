@@ -4,13 +4,13 @@ import { styled } from "next-yak";
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 px-4">
+      <main className="flex min-h-screen flex-col items-center justify-between sm:px-24 px-4">
         <div
           className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col"
           style={{ containerType: "inline-size" }}
         >
-          <SvgWrapper>
-            <StickySvg
+          <StickySvgWrapper className="bg">
+            <ResponsiveSvg
               xmlns="http://www.w3.org/2000/svg"
               width="766.325"
               height="300.505"
@@ -19,16 +19,28 @@ export default function Home() {
               viewBox="19645.86 53497.44 1582.65 622.01"
             >
               <Arrow order={[0, 1, 5, 2, 6, 7, 8, 4, 3]} />
-            </StickySvg>
-          </SvgWrapper>
+            </ResponsiveSvg>
+          </StickySvgWrapper>
           <Content>
             <Section>
               <h1 className="text-3xl font-bold mb-4">
                 Website Loading Strategies
               </h1>
               <p>
-                Comparision of different web loading strategies for a website
-                with dynamic content.
+                Most modern websites have to wait for two things:
+                <ol className="list-decimal list-inside my-4">
+                  <li>
+                    <span style={{ color: "#40c057" }}>dynamic content</span>{" "}
+                    before it can present the most important part of the website
+                    (measured as <span style={{ color: "#b484d3" }}>LCP</span>)
+                  </li>
+                  <li>
+                    <span style={{ color: "#72C7F9" }}>javascript</span> to
+                    become interactive (measured as{" "}
+                    <span style={{ color: "#b484d3" }}>TTI</span>)
+                  </li>
+                </ol>
+                Let's explore different strategies which try to improve these metrics.
                 <br />
                 <br />↓ Scroll down to start ↓
               </p>
@@ -40,9 +52,21 @@ export default function Home() {
 
               <p>
                 Client side rendering is a common way to build web applications.
-                It is easy to develop and deploy. Once the client side
-                javascript has been executed on the client it loads the data
-                from the server and renders the page.
+                It is easy to develop and deploy. The server sends an{" "}
+                <span style={{ color: "#ffc034" }}>
+                  HTML Document without the content
+                </span>{" "}
+                to trigger the{" "}
+                <span style={{ color: "#72C7F9" }}>client side javascript</span>{" "}
+                download. Once the{" "}
+                <span style={{ color: "#72C7F9" }}>
+                  javascript has been executed
+                </span>{" "}
+                on the client, the javascript code loads{" "}
+                <span style={{ color: "#40c057" }}>
+                  the data for the dynamic content
+                </span>{" "}
+                from the server and renders an interactive page.
               </p>
             </Section>
 
@@ -51,10 +75,19 @@ export default function Home() {
 
               <p>
                 With frameworks like Next.js, SSR became easier to implement. It
-                allows moving the data download to the server and renders the
-                page without client javascript. Once the javascript is
-                downloaded, the client side javascript is executed to add
-                interactivity.
+                allows moving the{" "}
+                <span style={{ color: "#40c057" }}>data download</span> to the
+                server and renders the html with the content. That way the
+                server is able to send the{" "}
+                <span style={{ color: "#ffc034" }}>fully rendered HTML</span> to
+                the client and provide the{" "}
+                <span style={{ color: "#b484d3" }}>LCP</span> without
+                javascript. Once the{" "}
+                <span style={{ color: "#72C7F9" }}>
+                  javascript is downloaded and executed
+                </span>
+                , the page becomes interactive (
+                <span style={{ color: "#b484d3" }}>TTI</span>).
               </p>
             </Section>
 
@@ -62,9 +95,16 @@ export default function Home() {
               <h2 className="text-2xl my-4">Server Side Streaming</h2>
 
               <p>
-                With streaming the HTML generation and download can start even
-                before the data is fully loaded. This will further reduce the
-                time to first byte and improve the LCP and FID.
+                With streaming the HTML generation and{" "}
+                <span style={{ color: "#ffc034" }}> HTML download</span> can
+                start even before the{" "}
+                <span style={{ color: "#40c057" }}>
+                  dynamic content is fully loaded
+                </span>
+                . Therefore the{" "}
+                <span style={{ color: "#72C7F9" }}>javascript download</span>{" "}
+                can start earlier to further improve the{" "}
+                <span style={{ color: "#b484d3" }}>TTI</span>.
               </p>
             </Section>
           </Content>
@@ -90,6 +130,7 @@ const Warning = styled.div`
   left: 0;
   right: 0;
   padding: 10px;
+  z-index: 1000;
   background: #f11c40;
   text-align: center;
   font-size: 0.8rem;
@@ -99,12 +140,12 @@ const Warning = styled.div`
   }
 `;
 
-const StickySvg = styled.svg`
+const ResponsiveSvg = styled.svg`
   width: 100%;
   height: auto;
 `;
 
-const SvgWrapper = styled.div`
+const StickySvgWrapper = styled.div`
   position: sticky;
   top: 0;
   padding-bottom: 40px;
@@ -113,26 +154,11 @@ const SvgWrapper = styled.div`
   @supports (animation-timeline: scroll()) {
     visibility: visible;
   }
+  mask-image: linear-gradient(to top, transparent, #000000 40px);
 `;
 
-const Content = styled.div`
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(
-    to bottom,
-    #f3e7e900 0,
-    #f3e7e900 0px,
-    #f3e7e98a 25px,
-    #f3e7e9ff 50px,
-    #f3e7e9 100%
-  );
-  background-size: 100% 100%;
-  background-position: 0 calc(100cqw * (300.505 / 766.325) + 20px);
-  background-clip: text;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-`;
+const Content = styled.div``;
 
 const Section = styled.section`
-  height: calc(100vh - 100cqw * (300.505 / 766.325) + 20px);
+  margin-bottom: calc(100vh - 100cqw * (300.505 / 766.325) + 40px);
 `;
