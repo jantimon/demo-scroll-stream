@@ -27,7 +27,7 @@ export default function Home() {
                 Website Loading Strategies
               </h1>
               <p>
-                Most modern websites have to wait for two things:
+                On most modern websites users have to wait for two things:
                 <ol className="list-decimal list-inside my-4">
                   <li>
                     <span style={{ color: "#40c057" }}>dynamic content</span>{" "}
