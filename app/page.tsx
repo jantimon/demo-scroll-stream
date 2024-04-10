@@ -1,5 +1,5 @@
+import { styled } from "next-yak";
 import { Arrow } from "./svg/line";
-import { css, styled } from "next-yak";
 
 export default function Home() {
   return (
