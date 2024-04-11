@@ -1,5 +1,5 @@
 import { styled } from "next-yak";
-import { Arrow } from "./svg/line";
+import { AnimatedTimeLineSvg } from "./AnumatedTimelineSvg";
 
 export default function Home() {
   return (
@@ -10,16 +10,7 @@ export default function Home() {
       >
         <Container className="z-10 max-w-5xl w-full justify-between font-mono text-sm lg:flex flex-col">
           <StickySvgWrapper className="bg">
-            <ResponsiveSvg
-              xmlns="http://www.w3.org/2000/svg"
-              width="766.325"
-              height="300.505"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              viewBox="19645.86 53497.44 1582.65 622.01"
-            >
-              <Arrow order={[0, 1, 5, 2, 6, 7, 8, 4, 3]} />
-            </ResponsiveSvg>
+            <ResponsiveSvg></ResponsiveSvg>
           </StickySvgWrapper>
           <Content>
             <Section>
@@ -151,11 +142,14 @@ export default function Home() {
               </h2>
 
               <p>
-                Server Side Streaming can be combined with React Server Components.
-                React Server Components reduce the amount of components which
-                have to be hydrated on the client. With less <span style={{ color: "#72C7F9" }}>
-                  javascript to download and to execute (hydration)</span> the
-                page becomes interactive faster (<span style={{ color: "#b484d3" }}>TTI</span>).
+                Server Side Streaming can be combined with React Server
+                Components. React Server Components reduce the amount of
+                components which have to be hydrated on the client. With less{" "}
+                <span style={{ color: "#72C7F9" }}>
+                  javascript to download and to execute (hydration)
+                </span>{" "}
+                the page becomes interactive faster (
+                <span style={{ color: "#b484d3" }}>TTI</span>).
               </p>
             </Section>
           </Content>
@@ -197,7 +191,7 @@ const Warning = styled.div`
   }
 `;
 
-const ResponsiveSvg = styled.svg`
+const ResponsiveSvg = styled(AnimatedTimeLineSvg)`
   width: 100%;
   height: auto;
 `;
