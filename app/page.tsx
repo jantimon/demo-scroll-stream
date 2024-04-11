@@ -1,5 +1,5 @@
 import { styled } from "next-yak";
-import { AnimatedTimeLineSvg } from "./AnumatedTimelineSvg";
+import { AnimatedTimeLineSvg } from "./AnimatedTimeLineSvg";
 
 export default function Home() {
   return (
